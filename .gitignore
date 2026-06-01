@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+input_photo/*
+!input_photo/.gitkeep
+output_photo/*
+!output_photo/.gitkeep

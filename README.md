@@ -18,6 +18,7 @@ Invisible-Watermark/
         qim.py                 # Core QIM algorithm
         utils.py               # Shared utilities (e.g., DFT / IDFT)
         config.py              # Global configurations and parameters
+        benchmark.py           # Experimental Test
 ```
 
 ## 使用者體驗

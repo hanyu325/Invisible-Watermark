@@ -15,14 +15,17 @@ def apply_watermark(img_path, text, output_path):
     
     # 【關鍵修改】：根據圖片總像素數量動態決定 QIM 的 Delta
     # 乘上 0.8 是為了確保訊號轉換回像素時，強度足以抵抗四捨五入，又不會嚴重影響畫質
-    dynamic_delta = rows * cols * 0.8 
+    # 2026/06/07 嘗試將 0.8 改成 2.0、3.0 甚至 5.0
+    dynamic_delta = rows * cols * 0.8
     
     binary_str = text_to_binary(text, EOF_MARKER)
     np.random.seed(SEED)
     
     coords = []
-    for r in range(1, rows // 2):
-        for c in range(1, cols):
+    # 原本是 range(1, rows // 2) 和 range(1, cols)
+    # 縮小範圍，避開高頻區：
+    for r in range(1, rows // 4): 
+        for c in range(1, cols // 4):
             coords.append((r, c))
             
     np.random.shuffle(coords)

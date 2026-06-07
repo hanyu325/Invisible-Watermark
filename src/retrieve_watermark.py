@@ -14,12 +14,15 @@ def retrieve_watermark(img_path):
     rows, cols = b_channel.shape
     
     # 【關鍵修改】：提取時套用相同的動態 Delta 計算公式
-    dynamic_delta = rows * cols * 0.8 
+    # 2026/06/07 嘗試將 0.8 改成 2.0、3.0 甚至 5.0
+    dynamic_delta = rows * cols * 0.8
     
     np.random.seed(SEED)
     coords = []
-    for r in range(1, rows // 2):
-        for c in range(1, cols):
+    # 原本是 range(1, rows // 2) 和 range(1, cols)
+    # 縮小範圍，避開高頻區：
+    for r in range(1, rows // 4): 
+        for c in range(1, cols // 4):
             coords.append((r, c))
             
     np.random.shuffle(coords)

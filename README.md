@@ -87,7 +87,7 @@ Already retrieved the watermark: // 這裡輸出提取的 watermark
 ## Installation Instructions
 
 ### Prerequisites
-- Python 3.8 or higher.
+- Python 3.13 or higher.
 - Git (optional, for version control).
 
 ### Setup Steps

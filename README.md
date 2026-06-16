@@ -83,3 +83,26 @@ Already retrieved the watermark: // 這裡輸出提取的 watermark
 1. 將input_photo資料夾內的undecode.png運用DFT轉換成頻域空間
 2. 根據設定好的key，找到位置並根據QIM將頻域空間藏的訊息轉換為Binary Code，直到碰到EOF字符
 3. 將Binary Code 轉換為ASCII Code，再轉換為Text，並輸出
+
+## Installation Instructions
+
+### Prerequisites
+- Python 3.8 or higher.
+- Git (optional, for version control).
+
+### Setup Steps
+1. Install Dependencies
+Install the necessary libraries (numpy, opencv-python, scikit-image) specified in the requirements file:
+```
+pip install -r requirements.txt
+```
+2. Prepare the Directories
+Ensure the required input and output directories exist at the root level of the project.
+```
+mkdir -p input_photo output_photo
+```
+3. Run the Application
+Place your target image into the input_photo folder and start the CLI application:
+```
+python src/main.py
+```
